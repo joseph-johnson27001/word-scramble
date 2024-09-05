@@ -11,6 +11,7 @@ export default {
 </script>
 
 <style>
+/* Global styles can go here */
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
