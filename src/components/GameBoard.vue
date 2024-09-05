@@ -1,12 +1,14 @@
 <template>
   <div>
     <h2>Game Board</h2>
-    <div
-      v-for="letter in scrambledLetters"
-      :key="letter"
-      @click="selectLetter(letter)"
-    >
-      <LetterButton :letter="letter" />
+    <div class="letters-container">
+      <div
+        v-for="letter in scrambledLetters"
+        :key="letter"
+        @click="selectLetter(letter)"
+      >
+        <LetterButton :letter="letter" />
+      </div>
     </div>
     <!-- Add more game logic here -->
   </div>
@@ -34,5 +36,24 @@ export default {
 </script>
 
 <style scoped>
-/* Add styles for the game board */
+.letters-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.letters-container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
 </style>
