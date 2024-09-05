@@ -1,6 +1,8 @@
 <template>
+  <h1>Choose A Game:</h1>
   <div class="modal">
-    <button @click="startGame">Start Game</button>
+    <button @click="startGame">Word Scramble</button>
+    <button @click="startGame">Quiz</button>
   </div>
 </template>
 
@@ -19,5 +21,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+button {
+  width: 100%;
 }
 </style>
