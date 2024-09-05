@@ -32,4 +32,8 @@ export default {
   flex-direction: column;
   align-items: center;
 }
+
+button {
+  width: 100%;
+}
 </style>
