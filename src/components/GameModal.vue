@@ -19,8 +19,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
+
 button {
   padding: 10px 20px;
   font-size: 16px;
