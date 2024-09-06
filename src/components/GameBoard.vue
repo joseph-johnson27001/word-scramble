@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2>Game Board</h2>
+    <!-- <h2>Game Board</h2> -->
     <div v-if="wordList.length">
-      <h3>Category: {{ selectedCategory }}</h3>
+      <!-- <h3>Category: {{ selectedCategory }}</h3> -->
       <div class="letters-container">
         <div
           v-for="letter in scrambledLetters"

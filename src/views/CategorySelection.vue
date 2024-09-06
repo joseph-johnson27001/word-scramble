@@ -2,11 +2,11 @@
   <div class="category-selection">
     <h2>Select Category</h2>
     <button
-      v-for="(category, key) in categories"
-      :key="key"
-      @click="handleCategorySelection(key)"
+      v-for="categoryName in sortedCategoryNames"
+      :key="categoryName"
+      @click="handleCategorySelection(categoryName)"
     >
-      {{ key.toUpperCase() }}
+      {{ categoryName.toUpperCase() }}
     </button>
   </div>
 </template>
@@ -17,11 +17,15 @@ import { mapActions, mapState } from "vuex";
 export default {
   computed: {
     ...mapState(["categories"]),
+    sortedCategoryNames() {
+      // Sort the category keys alphabetically and use them as stable identifiers
+      return Object.keys(this.categories).sort();
+    },
   },
   methods: {
     ...mapActions(["selectCategory"]),
-    handleCategorySelection(category) {
-      this.selectCategory(category);
+    handleCategorySelection(categoryName) {
+      this.selectCategory(categoryName);
       this.$router.push({ name: "GameBoard" });
     },
   },
