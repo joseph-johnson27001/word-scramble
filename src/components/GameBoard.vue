@@ -29,7 +29,12 @@ export default {
     ...mapState(["selectedCategory", "wordList"]),
     scrambledLetters() {
       if (this.wordList.length) {
-        return this.wordList[0]
+        // Pick a random word from the wordList
+        const randomIndex = Math.floor(Math.random() * this.wordList.length);
+        const selectedWord = this.wordList[randomIndex];
+
+        // Scramble the selected word
+        return selectedWord
           .toUpperCase()
           .split("")
           .sort(() => 0.5 - Math.random());
