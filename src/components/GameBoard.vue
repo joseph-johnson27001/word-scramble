@@ -29,7 +29,10 @@ export default {
     ...mapState(["selectedCategory", "wordList"]),
     scrambledLetters() {
       if (this.wordList.length) {
-        return this.wordList[0].split("").sort(() => 0.5 - Math.random());
+        return this.wordList[0]
+          .toUpperCase()
+          .split("")
+          .sort(() => 0.5 - Math.random());
       }
       return [];
     },
