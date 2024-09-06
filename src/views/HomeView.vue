@@ -11,7 +11,7 @@
 
 <script>
 import GameModal from "../components/GameModal.vue";
-import CategorySelection from "../components/CategorySelection.vue";
+import CategorySelection from "./CategorySelection.vue";
 
 export default {
   components: {
