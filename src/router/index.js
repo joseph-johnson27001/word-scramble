@@ -1,10 +1,24 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import GameView from "../views/GameView.vue";
+import CategorySelection from "../views/CategorySelection.vue";
+import GameBoard from "../components/GameBoard.vue";
 
 const routes = [
-  { path: "/", component: HomeView },
-  { path: "/game", component: GameView },
+  {
+    path: "/",
+    name: "Home",
+    component: HomeView,
+  },
+  {
+    path: "/categories",
+    name: "CategorySelection",
+    component: CategorySelection,
+  },
+  {
+    path: "/game-board",
+    name: "GameBoard",
+    component: GameBoard,
+  },
 ];
 
 const router = createRouter({
