@@ -6,7 +6,7 @@
       :key="key"
       @click="handleCategorySelection(key)"
     >
-      {{ key }}
+      {{ key.toUpperCase() }}
     </button>
   </div>
 </template>
