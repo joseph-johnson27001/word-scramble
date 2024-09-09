@@ -1,16 +1,36 @@
 <template>
-  <h1>Choose A Game:</h1>
-  <div class="modal">
-    <button @click="startGame">Word Scramble</button>
-    <button @click="startGame">Quiz</button>
+  <div>
+    <h1>Choose A Game:</h1>
+    <div class="modal">
+      <div v-for="(game, index) in games" :key="index" class="game-button">
+        <button @click="startGame(game)">{{ game }}</button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      games: [
+        "Word Scramble",
+        "Quiz Master",
+        "Crossword Craze",
+        "Anagram Attack",
+        "Riddle Run",
+        "Word Ladder",
+        "Letter Link",
+        "Puzzle Pop",
+        "Phrase Finder",
+      ],
+    };
+  },
   methods: {
-    startGame() {
-      this.$emit("start");
+    startGame(game) {
+      // NEEDS TO BE UPDATED TO LOAD SPECIFIC GAME
+      console.log("Starting game:", game);
+      this.$emit("start", game);
     },
   },
 };
@@ -18,13 +38,15 @@ export default {
 
 <style scoped>
 .modal {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  justify-items: center;
   align-items: center;
-  flex-direction: column;
+  padding: 20px;
 }
 
-button {
-  width: 100%;
+.game-button {
+  width: 100px;
 }
 </style>
