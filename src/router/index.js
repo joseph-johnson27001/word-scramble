@@ -5,11 +5,12 @@ import WordScramble from "@/views/games/word-scramble/WordScramble.vue";
 import CrosswordCraze from "@/views/games/crossword-craze/CrosswordCraze.vue";
 import AnagramAttack from "@/views/games/anagram-attack/AnagramAttack.vue";
 import RiddleRun from "@/views/games/riddle-run/RiddleRun.vue";
-import WordLadder from "@/views/games/word-ladder/WordLadder.vue"; // Updated path
+import WordLadder from "@/views/games/word-ladder/WordLadder.vue";
 import LetterLink from "@/views/games/letter-link/LetterLink.vue";
 import PuzzlePop from "@/views/games/puzzle-pop/PuzzlePop.vue";
 import PhraseFinder from "@/views/games/phrase-finder/PhraseFinder.vue";
 import WordScrambleGameBoard from "@/views/games/word-scramble/WordScrambleGameBoard.vue";
+import CategorySelection from "@/views/games/word-scramble/CategorySelection.vue";
 
 const routes = [
   { path: "/", name: "home", component: HomeView },
@@ -26,6 +27,11 @@ const routes = [
   { path: "/letter-link", name: "letter-link", component: LetterLink },
   { path: "/puzzle-pop", name: "puzzle-pop", component: PuzzlePop },
   { path: "/phrase-finder", name: "phrase-finder", component: PhraseFinder },
+  {
+    path: "/word-scramble/category-selection",
+    name: "category-selection",
+    component: CategorySelection,
+  },
   {
     path: "/word-scramble/game-board",
     name: "word-scramble-game-board",

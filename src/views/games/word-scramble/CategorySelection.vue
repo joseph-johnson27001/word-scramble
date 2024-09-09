@@ -1,6 +1,6 @@
 <template>
   <div class="category-selection">
-    <!-- <h2>Select Category</h2> -->
+    <h2>Select Category</h2>
     <button
       v-for="categoryName in sortedCategoryNames"
       :key="categoryName"
@@ -26,12 +26,11 @@ export default {
     ...mapActions(["selectCategory"]),
     handleCategorySelection(categoryName) {
       this.selectCategory(categoryName);
-      this.$router.push({ name: "word-scramble-game-board" }); // Correct route name
+      // Redirect to the game board with selected category
+      this.$router.push({ name: "word-scramble-game-board" });
     },
   },
 };
 </script>
 
-<style scoped>
-/* Add styles for CategorySelection here */
-</style>
+<style scoped></style>
