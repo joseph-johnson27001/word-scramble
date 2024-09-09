@@ -1,41 +1,61 @@
 <template>
   <div>
-    <GameModal v-if="!gameStarted" @start="startGame" />
-    <CategorySelection
-      v-if="gameStarted && !categorySelected"
-      @category-selected="selectCategory"
-    />
-    <router-view v-if="categorySelected" />
+    <h1>Choose A Game:</h1>
+    <div class="modal">
+      <div v-for="(game, route) in games" :key="route" class="game-button">
+        <button @click="goToGame(route)">
+          <span class="icon">🎮</span>
+          <!-- Placeholder icon -->
+          <span class="game-name">{{ game }}</span>
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import GameModal from "../components/GameModal.vue";
-import CategorySelection from "./CategorySelection.vue";
-
 export default {
-  components: {
-    GameModal,
-    CategorySelection,
-  },
   data() {
     return {
-      gameStarted: false,
-      categorySelected: false,
+      games: {
+        "quiz-master": "Quiz Master",
+        "word-scramble": "Word Scramble",
+        "crossword-craze": "Crossword Craze",
+        "anagram-attack": "Anagram Attack",
+        "riddle-run": "Riddle Run",
+        "word-ladder": "Word Ladder",
+        "letter-link": "Letter Link",
+        "puzzle-pop": "Puzzle Pop",
+        "phrase-finder": "Phrase Finder",
+      },
     };
   },
   methods: {
-    startGame() {
-      this.gameStarted = true;
-    },
-    selectCategory(category) {
-      this.categorySelected = true;
-      this.$router.push({ path: "/game", query: { category } });
+    goToGame(route) {
+      this.$router.push({ name: route });
     },
   },
 };
 </script>
 
 <style scoped>
-/* Add styles for the home view */
+.modal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.game-button {
+  width: 150px;
+  height: 150px;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 </style>
